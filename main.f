@@ -30,7 +30,9 @@ c   gauss3.f   gauss3
 
 c   flux.f     flux                                                     
 
-c   rfour.f    rfour                                                    
+c   rfour.f    rfour   
+
+C   conv.f     conv check                                          
 
 c   postpro.f   odata  postpr  ckeck                              
 
