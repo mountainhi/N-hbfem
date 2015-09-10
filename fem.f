@@ -5,7 +5,7 @@ c
 c                                                                       
        include 'common.inc'
 c                                                                       
-         dimension ddd(nmd,2,2), dss(3,3)
+       dimension ddd(nmd,2,2), dss(3,3)
 		 
 c
         do i=1, nom2                                                  
@@ -355,7 +355,7 @@ c ***********  calculate reluctivity matrix  dmat  ***************
 c                                                                       
            subroutine dmat                                              
 c                                                                       
-       include 'common'
+       include 'common.inc'
 c                                                                       
       do 100 ne=1, nelem                                                
         if (int(nod(ne,4)/100).eq.2)         goto 200                   
@@ -387,7 +387,7 @@ c
           call rfour(ne)                                                
 c                                                                       
 c -------  make the reluctivity matrix  -------------                   
-c                                                                       
+c ....      nhh = nloop    (number of harmonics)                                                                
         kk  = nhh                                                          
         kk1 = nhh                                                       
 		  
