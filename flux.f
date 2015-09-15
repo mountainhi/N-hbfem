@@ -3,7 +3,12 @@ c
            subroutine flux                                              
 c                                                                       
        include 'common.inc'
-c                                                                       
+c   
+c ***** definition of node number *****                                 
+c 1---(unknown npo1)---(dirichlet npo2)---(periodic npo3)  
+                         
+C      daa() : initial values of vector potential   
+                                       
        dimension dx(3),dy(3),dq(3),dr(3),dda(nmd,3,2)                   
 c                                                                       
       do 100 ne=1,nelem                                                 
@@ -36,7 +41,6 @@ c
   110   continue                                                        
 
 c                                                                       
-
         dq(1)=dy(2) -dy(3)                                              
         dr(1)=dx(3) -dx(2)                                              
         dq(2)=dy(3) -dy(1)                                              
@@ -44,7 +48,6 @@ c
         dq(3)=dy(1) -dy(2)                                              
         dr(3)=dx(2) -dx(1)                                              
 c                                                                       
-
         do  j=1,mmu                                                  
           dbx(ne,j,1)=0.0                                               
           dbx(ne,j,2)=0.0                                               

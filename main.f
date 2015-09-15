@@ -85,7 +85,7 @@ c    nelem          number of element
 
 c    nb             bound width of system matrix                        
 
-c    nod( , )       node numner of triangle element                     
+c    nod( , )       node number of triangle element                     
 
 c                   and material                                        
 

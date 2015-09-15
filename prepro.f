@@ -46,7 +46,8 @@ c ********* if double precision ******************
 c          implicit real*8(d)                                           
 c     
 c    nom1           nom1=mmu*npo1                                       
-c    nom2           nom2=mmu*(ncn+nbr)                                                                   
+c    nom2           nom2=mmu*(ncn+nbr)  
+C    nbb            nbb =4*nb-1                                                                 
        do i=1, nom1                                                 
          do  j=1, nbb                                                
            dh(i,j) =0.0                                                 
