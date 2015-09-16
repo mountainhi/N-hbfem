@@ -6,8 +6,9 @@ c
        include 'common.inc'
 c                                                                       
        dimension ddd(nmd,2,2), dss(3,3)
-		 
-c
+c    nom2           nom2=mmu*(ncn+nbr) 		 
+c    nhh            nhh =nloop
+
         do i=1, nom2                                                  
           dk(nom1+i)=dkk(nhh,nom1+i)                                      
         enddo    		 
@@ -49,10 +50,10 @@ c
           enddo                                                     
 c                                                                       
           do  j=1,2                                                  
-            do 150 k=1,2                                                
+            do  k=1,2                                                
 c              if(dn(nhh,j,k).eq.0.0)                    go to 150    
-            if(dn(nhh,j,k).ne.0.0)   
-              dhl(jj2+j,nlow+k)=dhl(jj2+j,nlow+k)                       
+             if(dn(nhh,j,k).ne.0.0)   
+                 dhl(jj2+j,nlow+k) = dhl(jj2+j,nlow+k)                       
      &                         -dn(nhh,j,k)*dc(ne)*dsig1*2.             
             enddo                                                  
            enddo                                                     
@@ -77,8 +78,8 @@ c --------  dss( , )  -------------
 c                                                                       
         nss=1                                                           
 
-        do 240 j=1,3                                                    
-          do 250 k=j,3                                                  
+        do j=1,3                                                    
+          do k=j,3                                                  
 
             dss(j,k)=ds(ne,nss)                                         
             dss(k,j)=ds(ne,nss)                                         
@@ -156,8 +157,8 @@ c
                 do l=2,mmu                                          
                   dk(nl)=dk(nl)-ddd(l,m,n)*dnc1*                        
      &                          daa(mod(l+nhh-2,mmu)+1,nc)              
-
                 enddo
+				
               enddo				
             enddo                                                    
 
